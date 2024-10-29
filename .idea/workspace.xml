@@ -5,6 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="80354058-2f51-4a2b-9d5d-f2131494c090" name="Changes" comment="Initial version">
+      <change afterPath="$PROJECT_DIR$/UpdateWorth.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scrapersetup.ps1" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pdfhandler.py" beforeDir="false" afterPath="$PROJECT_DIR$/pdfhandler.py" afterDir="false" />
     </list>
@@ -50,6 +52,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/Users/kevin/PycharmProjects/Scraper",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -59,6 +62,11 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\kevin\PycharmProjects\Scraper" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="pdfhandler" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Scraper" />
@@ -106,7 +114,7 @@
       <option name="presentableId" value="Default" />
       <updated>1730152067542</updated>
       <workItem from="1730152068898" duration="13906000" />
-      <workItem from="1730167742605" duration="12407000" />
+      <workItem from="1730167742605" duration="13084000" />
     </task>
     <task id="LOCAL-00001" summary="Initial version">
       <option name="closed" value="true" />
@@ -132,7 +140,15 @@
       <option name="project" value="LOCAL" />
       <updated>1730174070574</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Initial version">
+      <option name="closed" value="true" />
+      <created>1730233359729</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1730233359729</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -143,6 +159,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="Initial version" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Scraper$pdfhandler.coverage" NAME="pdfhandler Coverage Results" MODIFIED="1730232909101" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Scraper$pdfhandler.coverage" NAME="pdfhandler Coverage Results" MODIFIED="1730233311178" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
