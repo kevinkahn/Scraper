@@ -14,7 +14,7 @@ public static extern void mouse_event(long dwFlags, long dx, long dy, long cButt
 
 $SendMouseClick = Add-Type -memberDefinition $signature -name "Win32MouseEventNew" -namespace Win32Functions -passThru
 
-Start-Process chrome -ArgumentList "https://ix.bdreporting.com/Home", "--start-fullscreen","--new-window"
+Start-Process chrome.exe -WindowStyle Maximized -ArgumentList "https://ix.bdreporting.com/Home","--start-fullscreen","--new-window"
 sleep -Seconds 5
 
 # click to net worth
