@@ -5,15 +5,13 @@ page=reader.pages[0]
 ex = page.extract_text(0).splitlines()[6:]
 info = []
 acctpat = re.compile('(^.*?) *((?:Ke|Su).*)')
-nampat = re.compile('([a-zA-Z0-9_]*?)((?:\d{1,3}(?:,\d{3})*)?\.\d{2}) ')
+nampat = re.compile('([a-zA-Z0-9_]*?)((?:\d{1,3}(?:,\d{3})*)?\.\d{2}) +(\d{1,2}\/\d{1,2}\/\d{2,4}) +(\d{1,2}\/\d{1,2}\/\d{2,4}|--)')
 for acct in ex:
     p1 = acctpat.split(acct)
     p2 = nampat.split(p1[2])
+    acctcode = p1[1]
+    acctval = p2[2].strip(',')
+    acctdate = p2[3] if p2[4] == '--' else p2[4]
+    print(f'{acctcode},{acctval},{acctdate}')
 
-    #print(p1)
-    #print(p2)
-    print(f'{p1[1]}  {p2[2]}' )
-    #print (p1[1])
-    #print(p1[2])
-    #print(p2)
-    #print (p2[2])
+
