@@ -1,13 +1,13 @@
 import os
 
-import pypdf, re
+import re
 from pypdf import PdfReader
 reader = PdfReader("C:\\Users\kevin\OneDrive\Desktop\Blue Square Asset Management LLC.pdf")
 page=reader.pages[0]
 ex = page.extract_text(0).splitlines()[6:]
 info = []
 acctpat = re.compile('(^.*?) *((?:Ke|Su).*)')
-nampat = re.compile('([a-zA-Z0-9_]*?)((?:\d{1,3}(?:,\d{3})*)?\.\d{2}) +(\d{1,2}\/\d{1,2}\/\d{2,4}) +(\d{1,2}\/\d{1,2}\/\d{2,4}|--)')
+nampat = re.compile('([a-zA-Z0-9_]*?)((?:\d{1,3}(?:,\d{3})*)?\.\d{2}) +(\d{1,2}/\d{1,2}/\d{2,4}) +(\d{1,2}/\d{1,2}/\d{2,4}|--)')
 
 with open("C:\\Users\kevin\OneDrive\Desktop\BSVal.csv", "w") as f:
     for acct in ex:
