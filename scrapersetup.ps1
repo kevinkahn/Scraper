@@ -14,20 +14,33 @@ public static extern void mouse_event(long dwFlags, long dx, long dy, long cButt
 
 $SendMouseClick = Add-Type -memberDefinition $signature -name "Win32MouseEventNew" -namespace Win32Functions -passThru
 
-Start-Process chrome.exe -WindowStyle Maximized -ArgumentList "https://ix.bdreporting.com/Home","--start-fullscreen","--new-window"
-sleep -Seconds 5
+$wind = '--new-window'
+$startmode = '--start-maximized'
+
+#Start-Process chrome.exe -WindowStyle Maximized -ArgumentList "https://ix.bdreporting.com/Home","--fullscreen","--new-window"
+Start-Process -FilePath "C:\Users\kevin\PycharmProjects\Scraper\chrome.exe.lnk"  -ArgumentList $wind, $startmode, https://ix.bdreporting.com/Home
+
+sleep -Seconds 2
+
+[System.Windows.Forms.Cursor]::Position = New-Object System.Drawing.Point(598, 37)
+sleep -Seconds 01
+$SendMouseClick::mouse_event(0x00000002, 0, 0, 0, 0);
+$SendMouseClick::mouse_event(0x00000004, 0, 0, 0, 0);
+$SendMouseClick::mouse_event(0x00000002, 0, 0, 0, 0);
+$SendMouseClick::mouse_event(0x00000004, 0, 0, 0, 0);
+sleep -Seconds 3
 
 # click to net worth
 $x = 1192
 $y = 160
 [System.Windows.Forms.Cursor]::Position = New-Object System.Drawing.Point($x, $y)
-sleep -Seconds 01
+sleep -Milliseconds 500
 $SendMouseClick::mouse_event(0x00000002, 0, 0, 0, 0);
 $SendMouseClick::mouse_event(0x00000004, 0, 0, 0, 0);
 $x = 1200
 $y = 200
 [System.Windows.Forms.Cursor]::Position = New-Object System.Drawing.Point($x, $y)
-sleep -Seconds 05
+sleep -Milliseconds 500
 $SendMouseClick::mouse_event(0x00000002, 0, 0, 0, 0);
 $SendMouseClick::mouse_event(0x00000004, 0, 0, 0, 0);
 sleep -Milliseconds 500
@@ -76,7 +89,7 @@ sleep -Seconds 01
 $SendMouseClick::mouse_event(0x00000002, 0, 0, 0, 0)
 $SendMouseClick::mouse_event(0x00000004, 0, 0, 0, 0)
 
-# do save to file name box
+## do save to file name box
 $x = 1739
 $y = 1065
 [System.Windows.Forms.Cursor]::Position = New-Object System.Drawing.Point($x, $y)
@@ -85,12 +98,12 @@ $SendMouseClick::mouse_event(0x00000002, 0, 0, 0, 0)
 $SendMouseClick::mouse_event(0x00000004, 0, 0, 0, 0)
 
 # ok the overwrite
-$x = 1333
-$y = 705
-[System.Windows.Forms.Cursor]::Position = New-Object System.Drawing.Point($x, $y)
-sleep -Seconds 01
-$SendMouseClick::mouse_event(0x00000002, 0, 0, 0, 0)
-$SendMouseClick::mouse_event(0x00000004, 0, 0, 0, 0)
+#$x = 1333
+#$y = 705
+#[System.Windows.Forms.Cursor]::Position = New-Object System.Drawing.Point($x, $y)
+#sleep -Seconds 01
+#$SendMouseClick::mouse_event(0x00000002, 0, 0, 0, 0)
+#$SendMouseClick::mouse_event(0x00000004, 0, 0, 0, 0)
 
 # close the browser
 $x = 2539

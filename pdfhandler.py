@@ -17,6 +17,7 @@ with open("C:\\Users\kevin\OneDrive\Desktop\BSVal.csv", "w") as f:
         acctval = p2[2].replace(',','')
         acctdate = p2[3] if p2[4] == '--' else p2[4]
         print(f'{acctcode},{acctval},{acctdate}', file=f)
+        print(f'{acctcode},{acctval},{acctdate}')
 
 os.remove("C:\\Users\kevin\OneDrive\Desktop\Blue Square Asset Management LLC.pdf")
 
