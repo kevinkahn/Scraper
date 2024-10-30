@@ -1,4 +1,4 @@
-cd C:\Users\kevin\PycharmProjects\Scraper\.venv\Scripts
-powershell "C:\Users\kevin\PycharmProjects\Scraper\scrapersetup.ps1"
+cd O:\PythonProjects\BDScraper\.venv\Scripts
+powershell "O:\PythonProjects\BDScraper\scrapersetup.ps1"
 call activate
-python C:\Users\kevin\PycharmProjects\Scraper\pdfhandler.py >> errors 2>&1
+python O:\PythonProjects\BDScraper\pdfhandler.py >> errors 2>&1
