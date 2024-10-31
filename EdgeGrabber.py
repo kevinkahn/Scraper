@@ -15,7 +15,7 @@ tab =""
 class AppDynamicsJob(unittest.TestCase):
     def setUp(self):
         subprocess.call(r"taskkill /F /im msedge.exe")
-        time.sleep(5)
+        time.sleep(2)
         # AppDynamics will automatically override this web driver
         # as documented in https://docs.appdynamics.com/display/PRO44/Write+Your+First+Script
         edge_options = Options()
