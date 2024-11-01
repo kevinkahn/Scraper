@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 import subprocess
 
+import psutil
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
@@ -13,7 +14,15 @@ import unittest, time, re
 tab =""
 
 class AppDynamicsJob(unittest.TestCase):
+    @staticmethod
+    def close_edge_gracefully():
+        for proc in psutil.process_iter(['pid', 'name']):
+            if proc.info['name'] == 'msedge.exe':
+                proc.terminate()  # Sends a termination signal
+
     def setUp(self):
+        #self.close_edge_gracefully()
+        #subprocess.call(r"taskkill /im msedge.exe")
         subprocess.call(r"taskkill /F /im msedge.exe")
         time.sleep(2)
         # AppDynamics will automatically override this web driver

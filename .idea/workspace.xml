@@ -4,12 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="80354058-2f51-4a2b-9d5d-f2131494c090" name="Changes" comment="Move project home">
-      <change afterPath="$PROJECT_DIR$/EdgeGrabber.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GetAccountInfo.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Scraper.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Scraper.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="80354058-2f51-4a2b-9d5d-f2131494c090" name="Changes" comment="Redo with selenium for Edge">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EdgeGrabber.py" beforeDir="false" afterPath="$PROJECT_DIR$/EdgeGrabber.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UpdateWorth.bat" beforeDir="false" afterPath="$PROJECT_DIR$/UpdateWorth.bat" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -156,7 +154,8 @@
       <workItem from="1730167742605" duration="15913000" />
       <workItem from="1730238343911" duration="9740000" />
       <workItem from="1730252125731" duration="750000" />
-      <workItem from="1730321129449" duration="18871000" />
+      <workItem from="1730321129449" duration="19791000" />
+      <workItem from="1730501627581" duration="2128000" />
     </task>
     <task id="LOCAL-00001" summary="Initial version">
       <option name="closed" value="true" />
@@ -246,7 +245,23 @@
       <option name="project" value="LOCAL" />
       <updated>1730252813928</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Redo with selenium for Edge">
+      <option name="closed" value="true" />
+      <created>1730342937244</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1730342937244</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Redo with selenium for Edge">
+      <option name="closed" value="true" />
+      <created>1730343012162</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1730343012162</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -268,7 +283,8 @@
     <MESSAGE value="Clean up files" />
     <MESSAGE value="Handle activating the venv and some other stuff" />
     <MESSAGE value="Move project home" />
-    <option name="LAST_COMMIT_MESSAGE" value="Move project home" />
+    <MESSAGE value="Redo with selenium for Edge" />
+    <option name="LAST_COMMIT_MESSAGE" value="Redo with selenium for Edge" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -280,19 +296,24 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/EdgeGrabber.py</url>
-          <line>85</line>
+          <line>95</line>
           <option name="timeStamp" value="5" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/EdgeGrabber.py</url>
-          <line>78</line>
+          <line>88</line>
           <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/EdgeGrabber.py</url>
+          <line>20</line>
+          <option name="timeStamp" value="8" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Scraper$pdfhandler.coverage" NAME="pdfhandler Coverage Results" MODIFIED="1730243115854" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/BDScraper$.coverage" NAME=" Coverage Results" MODIFIED="1730342225975" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/BDScraper$.coverage" NAME=" Coverage Results" MODIFIED="1730503380656" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
