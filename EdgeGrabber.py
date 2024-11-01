@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import subprocess
 
-import psutil
+#import psutil
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
@@ -10,15 +10,17 @@ from selenium.common.exceptions import NoSuchElementException
 from selenium.common.exceptions import NoAlertPresentException
 from selenium.webdriver.edge.options import Options
 from itertools import islice
-import unittest, time, re
+#import unittest
+import time, re
 tab =""
 
-class AppDynamicsJob(unittest.TestCase):
-    @staticmethod
-    def close_edge_gracefully():
-        for proc in psutil.process_iter(['pid', 'name']):
-            if proc.info['name'] == 'msedge.exe':
-                proc.terminate()  # Sends a termination signal
+#class AppDynamicsJob(unittest.TestCase):
+class GrabData():
+    #@staticmethod
+    #def close_edge_gracefully():
+    #   for proc in psutil.process_iter(['pid', 'name']):
+    #        if proc.info['name'] == 'msedge.exe':
+    #            proc.terminate()  # Sends a termination signal
 
     def setUp(self):
         #self.close_edge_gracefully()
@@ -50,31 +52,31 @@ class AppDynamicsJob(unittest.TestCase):
         driver.back()
         driver.back()
 
-    def is_element_present(self, how, what):
-        try:
-            self.driver.find_element(by=how, value=what)
-        except NoSuchElementException as e:
-            return False
+    #def is_element_present(self, how, what):
+    #    try:
+    #        self.driver.find_element(by=how, value=what)
+    #    except NoSuchElementException as e:
+    ##        return False
         return True
 
-    def is_alert_present(self):
-        try:
-            self.driver.switch_to_alert()
-        except NoAlertPresentException as e:
-            return False
-        return True
+    #def is_alert_present(self):
+    #    try:
+    #        self.driver.switch_to_alert()
+    #    except NoAlertPresentException as e:
+    #        return False
+    #    return True
 
-    def close_alert_and_get_its_text(self):
-        try:
-            alert = self.driver.switch_to_alert()
-            alert_text = alert.text
-            if self.accept_next_alert:
-                alert.accept()
-            else:
-                alert.dismiss()
-            return alert_text
-        finally:
-            self.accept_next_alert = True
+    #def close_alert_and_get_its_text(self):
+    #    try:
+    #        alert = self.driver.switch_to_alert()
+    #        alert_text = alert.text
+    #        if self.accept_next_alert:
+    #            alert.accept()
+    #        else:
+    #            alert.dismiss()
+    #        return alert_text
+    #    finally:
+    #        self.accept_next_alert = True
 
     def tearDown(self):
         # To know more about the difference between verify and assert,
@@ -93,9 +95,15 @@ class AppDynamicsJob(unittest.TestCase):
                 acctdate = acct[4] if acct[5] == '--' else acct[5]
                 print(f'{acctcode},{acctval},{acctdate}', file=f)
 
-        self.assertEqual([], self.verificationErrors)
+        #self.assertEqual([], self.verificationErrors)
 
 
 if __name__ == "__main__":
     print('go')
-    unittest.main()
+    G = GrabData()
+    G.setUp()
+    G.test_app_dynamics_job()
+    G.tearDown()
+
+
+    #unittest.main()
