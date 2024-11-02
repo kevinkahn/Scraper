@@ -10,7 +10,6 @@ from selenium.common.exceptions import NoSuchElementException
 from selenium.common.exceptions import NoAlertPresentException
 from selenium.webdriver.edge.options import Options
 from itertools import islice
-#import unittest
 import time, re
 tab =""
 
@@ -25,7 +24,7 @@ class GrabData():
     def setUp(self):
         #self.close_edge_gracefully()
         #subprocess.call(r"taskkill /im msedge.exe")
-        subprocess.call(r"taskkill /F /im msedge.exe")
+        subprocess.run(r"taskkill /F /im msedge.exe", capture_output=True)
         time.sleep(2)
         # AppDynamics will automatically override this web driver
         # as documented in https://docs.appdynamics.com/display/PRO44/Write+Your+First+Script
@@ -36,8 +35,8 @@ class GrabData():
         self.driver = webdriver.Edge(options=edge_options)
         self.driver.implicitly_wait(30)
         self.base_url = "https://www.google.com/"
-        self.verificationErrors = []
-        self.accept_next_alert = True
+        #self.verificationErrors = []
+        #self.accept_next_alert = True
 
     def test_app_dynamics_job(self):
         global tab
@@ -52,41 +51,11 @@ class GrabData():
         driver.back()
         driver.back()
 
-    #def is_element_present(self, how, what):
-    #    try:
-    #        self.driver.find_element(by=how, value=what)
-    #    except NoSuchElementException as e:
-    ##        return False
-        return True
-
-    #def is_alert_present(self):
-    #    try:
-    #        self.driver.switch_to_alert()
-    #    except NoAlertPresentException as e:
-    #        return False
-    #    return True
-
-    #def close_alert_and_get_its_text(self):
-    #    try:
-    #        alert = self.driver.switch_to_alert()
-    #        alert_text = alert.text
-    #        if self.accept_next_alert:
-    #            alert.accept()
-    #        else:
-    #            alert.dismiss()
-    #        return alert_text
-    #    finally:
-    #        self.accept_next_alert = True
-
     def tearDown(self):
-        # To know more about the difference between verify and assert,
-        # visit https://www.seleniumhq.org/docs/06_test_design_considerations.jsp#validating-results
         splittab = tab.splitlines()[8:]
         tablist = []
         for i in range(0, len(splittab),6):
             tablist.append(splittab[i:i+6])
-
-        #print(tablist)
 
         with open(r"C:\\Users\kevin\OneDrive\Desktop\BSVal.csv", "w") as f:
             for acct in tablist:
@@ -95,15 +64,9 @@ class GrabData():
                 acctdate = acct[4] if acct[5] == '--' else acct[5]
                 print(f'{acctcode},{acctval},{acctdate}', file=f)
 
-        #self.assertEqual([], self.verificationErrors)
-
-
 if __name__ == "__main__":
     print('go')
     G = GrabData()
     G.setUp()
     G.test_app_dynamics_job()
     G.tearDown()
-
-
-    #unittest.main()
