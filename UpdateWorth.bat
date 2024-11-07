@@ -1,3 +1,5 @@
-cd O:\PythonProjects\BDScraper\.venv\Scripts
+O:
+cd \PythonProjects\BDScraper\.venv\Scripts
 call activate
-python3.12 O:\PythonProjects\BDScraper\EdgeGrabber.py
+:: python3.12 
+py O:\PythonProjects\BDScraper\EdgeGrabber.py

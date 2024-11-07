@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="80354058-2f51-4a2b-9d5d-f2131494c090" name="Changes" comment="Get rid of all the test stuff">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EdgeGrabber.py" beforeDir="false" afterPath="$PROJECT_DIR$/EdgeGrabber.py" afterDir="false" />
-    </list>
+    <list default="true" id="80354058-2f51-4a2b-9d5d-f2131494c090" name="Changes" comment="Get rid of all the test stuff" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -187,7 +184,7 @@
       <workItem from="1730321129449" duration="19791000" />
       <workItem from="1730501627581" duration="2581000" />
       <workItem from="1730504454183" duration="12000" />
-      <workItem from="1730505043917" duration="1047000" />
+      <workItem from="1730505043917" duration="1079000" />
     </task>
     <task id="LOCAL-00001" summary="Initial version">
       <option name="closed" value="true" />
@@ -309,7 +306,15 @@
       <option name="project" value="LOCAL" />
       <updated>1730505591302</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Get rid of all the test stuff">
+      <option name="closed" value="true" />
+      <created>1730506124374</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1730506124374</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
