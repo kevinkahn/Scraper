@@ -57,7 +57,7 @@ class GrabData():
         for i in range(0, len(splittab),6):
             tablist.append(splittab[i:i+6])
 
-        with open(r"C:\\Users\kevin\Desktop\BSVal.csv", "w") as f:
+        with open(r"F:\\BSVal.csv", "w") as f:
             for acct in tablist:
                 acctcode = acct[0]
                 acctval = acct[3].replace(',', '')
