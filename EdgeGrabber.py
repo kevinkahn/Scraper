@@ -41,7 +41,8 @@ class GrabData():
     def test_app_dynamics_job(self):
         global tab
         driver = self.driver
-        driver.get(self.base_url + "edge://newtab//")
+        #driver.get(self.base_url + "edge://newtab//")
+        #driver.get("edge://newtab//")
         driver.get("https://ix.bdreporting.com/Home")
         driver.find_element(By.XPATH,"//a[contains(text(),'Net Worth')]").click()
         driver.get("https://ix.bdreporting.com/NetWorth/Accounts")
@@ -57,12 +58,14 @@ class GrabData():
         for i in range(0, len(splittab),6):
             tablist.append(splittab[i:i+6])
 
-        with open(r"F:\\BSVal.csv", "w") as f:
+        with open(r"ScrapeOutput/BSVal.csv", "w") as f:
             for acct in tablist:
                 acctcode = acct[0]
                 acctval = acct[3].replace(',', '')
                 acctdate = acct[4] if acct[5] == '--' else acct[5]
                 print(f'{acctcode},{acctval},{acctdate}', file=f)
+
+
 
 if __name__ == "__main__":
     print('go')
