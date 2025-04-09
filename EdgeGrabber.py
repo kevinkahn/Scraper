@@ -42,7 +42,7 @@ class GrabData():
         global tab
         driver = self.driver
         #driver.get(self.base_url + "edge://newtab//")
-        #driver.get("edge://newtab//")
+        driver.get("edge://newtab//")
         driver.get("https://ix.bdreporting.com/Home")
         driver.find_element(By.XPATH,"//a[contains(text(),'Net Worth')]").click()
         driver.get("https://ix.bdreporting.com/NetWorth/Accounts")
@@ -64,8 +64,6 @@ class GrabData():
                 acctval = acct[3].replace(',', '')
                 acctdate = acct[4] if acct[5] == '--' else acct[5]
                 print(f'{acctcode},{acctval},{acctdate}', file=f)
-
-
 
 if __name__ == "__main__":
     print('go')
