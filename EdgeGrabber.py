@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import subprocess
-
-#import psutil
+# NOTE: msedgedriver needs to be for correct version of Edge put in path at "C:\Users\kevin\AppData\Local\Programs\Python\Python313\msedgedriver.exe"
+import psutil, os
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
@@ -12,19 +12,20 @@ from selenium.webdriver.edge.options import Options
 from itertools import islice
 import time, re
 tab =""
+os.chdir("C:\\Users\\\\kevin\\")
 
 #class AppDynamicsJob(unittest.TestCase):
 class GrabData():
-    #@staticmethod
-    #def close_edge_gracefully():
-    #   for proc in psutil.process_iter(['pid', 'name']):
-    #        if proc.info['name'] == 'msedge.exe':
-    #            proc.terminate()  # Sends a termination signal
+    @staticmethod
+    def close_edge_gracefully():
+       for proc in psutil.process_iter(['pid', 'name']):
+            if proc.info['name'] == 'msedge.exe':
+                proc.terminate()  # Sends a termination signal
 
     def setUp(self):
-        #self.close_edge_gracefully()
-        #subprocess.call(r"taskkill /im msedge.exe")
-        subprocess.run(r"taskkill /F /im msedge.exe", capture_output=True)
+        self.close_edge_gracefully()
+        #subprocess.call(r"taskkill /T /im msedge.exe")
+        #subprocess.run(r"taskkill /F /im msedge.exe", capture_output=True)
         time.sleep(2)
         # AppDynamics will automatically override this web driver
         # as documented in https://docs.appdynamics.com/display/PRO44/Write+Your+First+Script
@@ -44,11 +45,12 @@ class GrabData():
         #driver.get(self.base_url + "edge://newtab//")
         driver.get("edge://newtab//")
         driver.get("https://ix.bdreporting.com/Home")
-        driver.find_element(By.XPATH,"//a[contains(text(),'Net Worth')]").click()
-        driver.get("https://ix.bdreporting.com/NetWorth/Accounts")
+        #driver.find_element(By.XPATH,"//a[contains(text(),'Net Worth')]").click()
+        driver.get("https://ix.bdreporting.com/NetWorth/Accounts/Tab/All")
         driver.find_element(By.XPATH,"//a[contains(text(),'Accounts')]").click()
-        tab = driver.find_element(By.CSS_SELECTOR,
+        t = driver.find_element(By.CSS_SELECTOR,
             "section.ix-account-page-layout-content.ix-networth-account-list.ix-account-page-layout-content--card").text
+        tab = t
         driver.back()
         driver.back()
 
@@ -58,7 +60,8 @@ class GrabData():
         for i in range(0, len(splittab),6):
             tablist.append(splittab[i:i+6])
 
-        with open(r"ScrapeOutput/BSVal.csv", "w") as f:
+        #with open(r"ScrapeOutput/BSVal.csv", "w") as f:
+        with open(r"BSVal.csv", "w") as f:
             for acct in tablist:
                 acctcode = acct[0]
                 acctval = acct[3].replace(',', '')
